@@ -1,11 +1,13 @@
 import express, { Application, Request, Response } from 'express'
 import swaggerUI from 'swagger-ui-express'
 import { swaggerSpec } from './swagger.conf'
+import cors from 'cors'
 
 import PacienteRouter from './routes/Paciente.routes'
 import MedicoRouter from './routes/Medico.routes'
 import CitaRoutes from './routes/Cita.routes'
 import EspecialidadRoutes from './routes/Especialidad.routes'
+import FormularioRoutes from './routes/Formulario.routes'
 
 /**
  * Clase principal de la API. Define las rutas de la API
@@ -28,6 +30,7 @@ class App {
 			swaggerUI.serve,
 			swaggerUI.setup(swaggerSpec)
 		)
+		this.app.use(cors())
 		this.routes()
 	}
 
@@ -39,6 +42,7 @@ class App {
 		this.app.use('/', MedicoRouter)
 		this.app.use('/', CitaRoutes)
 		this.app.use('/', EspecialidadRoutes)
+		this.app.use('/', FormularioRoutes)
 	}
 
 	public start(): void {
