@@ -6,7 +6,6 @@ type JsonSchema = Record< string, any>
 class FormularioController {
     obtenerDefinicion(req: Request, res: Response) {
         //1. Extraer el nombre del formulario
-
         const { formulario } = req.params
         const miEsquema: JsonSchema = jsonSchema
 

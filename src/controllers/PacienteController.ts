@@ -19,7 +19,7 @@ class PacienteController {
                 cedula,
                 nombre,
                 apellido,
-                fecha, //asi me llega del json 
+                fecha,
                 telefono } = req.body
 
             const fechaNacimiento = new Date(fecha)

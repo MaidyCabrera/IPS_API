@@ -1,4 +1,3 @@
-// 1. Importar la biblioteca de trabajo
 import swaggerJSDoc from 'swagger-jsdoc'
 
 const swaggerOptions = {
